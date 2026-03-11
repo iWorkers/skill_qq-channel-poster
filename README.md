@@ -20,7 +20,6 @@
 ```bash
 pip install -r requirements.txt
 ```
-浏览器地址https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.6/win64/chrome-win64.zip
 
 **Node.js依赖：**
 ```bash
@@ -127,9 +126,9 @@ all-trending-data.json      posts.json +              发布到QQ频道
 
 | 评分维度 | 说明 | 分值 |
 |---------|------|------|
-| 排名权重 | 排名越靠前得分越高 | 第1名40分 |
+| 总Star数 | 总Star数越多得分越高 | 最多40分 |
 | 今日Star增长 | 每2个star得1分 | 最多20分 |
-| 总Star数 | 对数增长计算 | 最多15分 |
+| 排名权重 | 对数增长计算 | 最多15分 |
 | 描述质量 | 描述详细程度 | +5分 |
 | 热门语言 | Python/JS/Go/Rust等 | +8分 |
 | 关键词匹配 | AI/自动化/框架等 | +2分/个 |
@@ -182,4 +181,3 @@ A: 系统会自动跳过，无需手动操作。如需重新发布，删除 `pub
 - ✅ analyze-projects.js 智能选择并截图
 - ✅ 添加多维度评分系统
 - ✅ 更新文档和说明
-
