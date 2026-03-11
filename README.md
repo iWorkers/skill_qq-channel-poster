@@ -21,6 +21,7 @@
 pip install -r requirements.txt
 ```
 浏览器地址https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.6/win64/chrome-win64.zip
+
 **Node.js依赖：**
 ```bash
 cd .codebuddy/skills/qq-channel-poster
@@ -181,3 +182,4 @@ A: 系统会自动跳过，无需手动操作。如需重新发布，删除 `pub
 - ✅ analyze-projects.js 智能选择并截图
 - ✅ 添加多维度评分系统
 - ✅ 更新文档和说明
+
