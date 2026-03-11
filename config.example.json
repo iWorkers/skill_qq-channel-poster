@@ -1,0 +1,7 @@
+{
+  "qq_number": "你的QQ号",
+  "channel_id": "频道ID",
+  "cookies_file": "cookies.json",
+  "auto_post": true,
+  "post_delay": 10
+}

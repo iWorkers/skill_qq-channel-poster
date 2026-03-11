@@ -1,0 +1,13 @@
+{
+  "name": "qq-channel-poster",
+  "version": "1.0.0",
+  "description": "QQ频道帖子自动化发布 - GitHub Trending采集",
+  "main": "scripts/scraper.js",
+  "scripts": {
+    "scraper": "node scripts/scraper.js"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.40.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
