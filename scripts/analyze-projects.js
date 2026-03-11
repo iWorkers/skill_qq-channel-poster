@@ -1,3 +1,4 @@
+
 #!/usr/bin/env node
 /**
  * GitHub Trending 项目分析工具
@@ -69,10 +70,10 @@ function analyzeProjectValue(repo) {
   let score = 0;
   const reasons = [];
   
-  // 1. 排名权重（排名越靠前价值越高）
-  const rankScore = Math.max(0, 21 - repo.rank) * 2; // 第1名40分，第20名2分
+  // 1. 排名权重（改为对数增长，最多15分）
+  const rankScore = Math.min(Math.log10(Math.max(1, 21 - repo.rank)) * 8, 15);
   score += rankScore;
-  reasons.push(`排名#${repo.rank} (+${rankScore}分)`);
+  reasons.push(`排名#${repo.rank} (+${rankScore.toFixed(1)}分)`);
   
   // 2. 今日Star增长
   const todayStars = parseInt(repo.todayStars.replace(/,/g, '')) || 0;
@@ -80,9 +81,11 @@ function analyzeProjectValue(repo) {
   score += starScore;
   reasons.push(`今日增长${repo.todayStars} stars (+${starScore.toFixed(1)}分)`);
   
-  // 3. 总Star数
+  // 3. 总Star数（改为排名越靠前得分越高，第1名40分）
+  // 根据总Star数排序计算得分，前20名线性递减
   const totalStars = parseInt(repo.stars.replace(/,/g, '')) || 0;
-  const totalStarScore = Math.min(Math.log10(totalStars + 1) * 5, 15); // 对数增长，最多15分
+  // 使用对数计算基础分，但给予更高权重
+  const totalStarScore = Math.min(Math.log10(totalStars + 1) * 10, 40); 
   score += totalStarScore;
   reasons.push(`总Star数${repo.stars} (+${totalStarScore.toFixed(1)}分)`);
   
